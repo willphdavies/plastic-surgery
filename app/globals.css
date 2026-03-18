@@ -1,0 +1,596 @@
+@import "./styles/variables.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(217, 205, 193, 0.24),
+      transparent 34%
+    ),
+    linear-gradient(180deg, #f7f4f1 0%, #f4f1ed 100%);
+  color: var(--de-color-text);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+[data-fade-in-scroll] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+  will-change: opacity, transform;
+}
+
+[data-fade-in-scroll][data-fade-in-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.deSiteShell {
+  padding: 0 0 48px;
+}
+
+.deSiteShell .deShellBanner {
+  width: 100%;
+  margin-bottom: 18px;
+  background: var(--de-color-banner);
+  color: #fff;
+}
+
+.deSiteShell .deShellBannerLink {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px 16px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.deSiteShell .deShellContainer {
+  width: min(var(--de-max-width), calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.deSiteShell .deShellHeader {
+  position: sticky;
+  top: 12px;
+  z-index: 10;
+  margin-bottom: 20px;
+}
+
+.deSiteShell .deShellHeaderInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(221, 227, 230, 0.9);
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(31, 42, 48, 0.06);
+}
+
+.deSiteShell .deShellBrand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.deSiteShell .deShellBrandImage {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.deSiteShell .deShellBrandCopy {
+  min-width: 0;
+  display: grid;
+}
+
+.deSiteShell .deShellBrandTitle {
+  display: block;
+  font-size: 0.96rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.deSiteShell .deShellBrandSubtitle {
+  display: block;
+  margin-top: -2px;
+  font-size: 0.8rem;
+  color: var(--de-color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deSiteShell .deShellNav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.deSiteShell .deShellMobileToggle,
+.deSiteShell .deShellMobileOverlay,
+.deSiteShell .deShellMobileDrawer {
+  display: none;
+}
+
+.deSiteShellMobilePortal .deShellMobileOverlay,
+.deSiteShellMobilePortal .deShellMobileDrawer {
+  display: none;
+}
+
+.deSiteShell .deShellMobileToggle {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.deSiteShell .deShellMobileToggleLine {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 4px 0;
+  background: var(--de-color-accent-dark);
+  border-radius: 999px;
+}
+
+.deSiteShell .deShellNavDropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 12px;
+  margin-bottom: -12px;
+}
+
+.deSiteShell .deShellNavLink {
+  font-size: 0.94rem;
+  color: var(--de-color-text-muted);
+  transition: color 0.2s ease;
+}
+
+.deSiteShell .deShellNavLink:hover {
+  color: var(--de-color-accent-dark);
+}
+
+.deSiteShell .deShellNavDropdownMenu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: -22px;
+  z-index: 20;
+  display: grid;
+  gap: 2px;
+  min-width: 280px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid var(--de-color-line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 16px 34px rgba(31, 42, 48, 0.12);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.deSiteShell .deShellNavDropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 16px;
+}
+
+.deSiteShell .deShellNavDropdown:hover .deShellNavDropdownMenu,
+.deSiteShell .deShellNavDropdown:focus-within .deShellNavDropdownMenu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.deSiteShell .deShellNavDropdownItem {
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: var(--de-color-text-muted);
+  font-size: 0.92rem;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease;
+}
+
+.deSiteShell .deShellNavDropdownItem:hover {
+  background: var(--de-color-surface-secondary);
+  color: var(--de-color-accent-dark);
+}
+
+.deSiteShell .deShellSocialLinks {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.deSiteShell .deShellSocialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--de-color-line);
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--de-color-accent-dark);
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.deSiteShell .deShellSocialLink:hover {
+  transform: translateY(-1px);
+  border-color: var(--de-color-accent);
+  color: var(--de-color-accent);
+}
+
+.deSiteShell .deShellSocialIcon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.deSiteShell .deShellButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+  white-space: nowrap;
+}
+
+.deSiteShell .deShellButton:hover {
+  transform: translateY(-1px);
+}
+
+.deSiteShell .deShellButtonPrimary {
+  background: var(--de-color-accent-dark);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(36, 52, 61, 0.16);
+}
+
+.deSiteShell .deShellMain {
+  min-height: 40vh;
+}
+
+.deSiteShell .deShellFooter {
+  padding: 26px 0 10px;
+  color: var(--de-color-text-muted);
+  font-size: 0.92rem;
+}
+
+.deSiteShell .deShellFooterInner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 18px;
+  border-top: 1px solid rgba(221, 227, 230, 0.8);
+}
+
+.deSiteShell .deShellFooterMeta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.deSiteShell .deShellFooterCredit {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--de-color-text-muted);
+}
+
+.deSiteShell .deShellFooterCredit a {
+  font-weight: 600;
+}
+
+@media (max-width: 1050px) {
+  .deSiteShell .deShellNav {
+    display: none;
+  }
+
+  .deSiteShell .deShellMobileToggle {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    border: 1px solid var(--de-color-line);
+    background: rgba(255, 255, 255, 0.88);
+  }
+
+  .deSiteShell .deShellMobileOverlay {
+    display: none;
+  }
+
+  .deSiteShell .deShellMobileDrawer {
+    display: none;
+  }
+
+  .deSiteShellMobilePortal .deShellMobileOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 59;
+    display: block;
+    border: 0;
+    background: rgba(0, 0, 0, 0.72);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .deSiteShellMobilePortal .deShellMobileOverlayOpen {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .deSiteShellMobilePortal .deShellMobileDrawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 60;
+    display: block;
+    width: min(360px, calc(100vw - 32px));
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    padding: 14px 20px 24px;
+    background: rgba(255, 255, 255, 0.98);
+    border-left: 1px solid var(--de-color-line);
+    box-shadow: -12px 0 34px rgba(31, 42, 48, 0.12);
+    transform: translateX(100%);
+    transition: transform 0.22s ease;
+    overflow-y: auto;
+  }
+
+  .deSiteShellMobilePortal .deShellMobileDrawerOpen {
+    transform: translateX(0);
+  }
+
+  .deSiteShellMobilePortal .deShellMobileDrawerHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .deSiteShellMobilePortal .deShellMobileDrawerLogo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .deSiteShellMobilePortal .deShellMobileDrawerLogoImage {
+    width: 84px;
+    height: 84px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  .deSiteShellMobilePortal .deShellMobileNav {
+    display: grid;
+    gap: 12px;
+  }
+
+  .deSiteShellMobilePortal .deShellMobileSection {
+    display: grid;
+    gap: 10px;
+  }
+
+  .deSiteShellMobilePortal .deShellMobileSectionHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(221, 227, 230, 0.8);
+  }
+
+  .deSiteShellMobilePortal .deShellMobileNavLink {
+    display: block;
+    padding: 12px 0;
+    color: var(--de-color-accent-dark);
+    font-size: 1.02rem;
+    font-weight: 600;
+    flex: 1 1 auto;
+  }
+
+  .deSiteShellMobilePortal .deShellMobileExpand {
+    flex: 0 0 auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--de-color-accent-dark);
+    font: inherit;
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .deSiteShellMobilePortal .deShellMobileSubnav {
+    display: none;
+    gap: 2px;
+    padding: 0 0 8px 12px;
+  }
+
+  .deSiteShellMobilePortal .deShellMobileSubnavOpen {
+    display: grid;
+  }
+
+  .deSiteShellMobilePortal .deShellMobileSubnavLink {
+    padding: 8px 0;
+    color: var(--de-color-text-muted);
+    font-size: 0.94rem;
+  }
+
+  .deSiteShellMobilePortal .deShellMobileSocials {
+    display: flex;
+    gap: 10px;
+    padding-top: 8px;
+    justify-content: center;
+  }
+
+  .deSiteShell .deShellMobileDrawerHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .deSiteShell .deShellMobileDrawerLogo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .deSiteShell .deShellMobileDrawerLogoImage {
+    width: 84px;
+    height: 84px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  .deSiteShell .deShellMobileNav {
+    display: grid;
+    gap: 12px;
+  }
+
+  .deSiteShell .deShellMobileSection {
+    display: grid;
+    gap: 10px;
+  }
+
+  .deSiteShell .deShellMobileSectionHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(221, 227, 230, 0.8);
+  }
+
+  .deSiteShell .deShellMobileNavLink {
+    display: block;
+    padding: 12px 0;
+    color: var(--de-color-accent-dark);
+    font-size: 1.02rem;
+    font-weight: 600;
+    flex: 1 1 auto;
+  }
+
+  .deSiteShell .deShellMobileExpand {
+    flex: 0 0 auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--de-color-accent-dark);
+    font: inherit;
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .deSiteShell .deShellMobileSubnav {
+    display: none;
+    gap: 2px;
+    padding: 0 0 8px 12px;
+  }
+
+  .deSiteShell .deShellMobileSubnavOpen {
+    display: grid;
+  }
+
+  .deSiteShell .deShellMobileSubnavLink {
+    padding: 8px 0;
+    color: var(--de-color-text-muted);
+    font-size: 0.94rem;
+  }
+
+  .deSiteShell .deShellMobileSocials {
+    display: flex;
+    gap: 10px;
+    padding-top: 8px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 860px) {
+  .deSiteShell .deShellHeaderInner {
+    border-radius: 28px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .deSiteShell .deShellHeaderInner {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 640px) {
+  .deSiteShell .deShellContainer {
+    width: min(var(--de-max-width), calc(100% - 20px));
+  }
+
+  .deSiteShell .deShellBanner {
+    margin-bottom: 14px;
+  }
+}

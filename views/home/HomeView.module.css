@@ -1,0 +1,279 @@
+.deHomeView {
+  display: grid;
+  gap: 34px;
+  padding-top: 18px;
+}
+
+.deHomeView .deHero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 28px;
+  align-items: stretch;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(248, 247, 245, 0.98) 100%
+  );
+  border: 1px solid rgba(221, 227, 230, 0.9);
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: var(--de-shadow-lg);
+}
+
+.deHomeView .deHeroCopy {
+  padding: 56px 56px 48px;
+}
+
+.deHomeView .deEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  border: 1px solid var(--de-color-line);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--de-color-accent);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.deHomeView .deTitle {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  line-height: 1.03;
+  letter-spacing: -0.04em;
+  max-width: 11ch;
+  font-weight: 700;
+}
+
+.deHomeView .deLead {
+  max-width: 62ch;
+  margin: 20px 0 0;
+  font-size: 1.08rem;
+  color: var(--de-color-text-muted);
+}
+
+.deHomeView .deActions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.deHomeView .deButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.deHomeView .deButton:hover {
+  transform: translateY(-1px);
+}
+
+.deHomeView .deButtonPrimary {
+  background: var(--de-color-accent-dark);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(36, 52, 61, 0.16);
+}
+
+.deHomeView .deButtonSecondary {
+  background: #fff;
+  color: var(--de-color-accent-dark);
+  border: 1px solid var(--de-color-line);
+}
+
+.deHomeView .deHeroMedia {
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 42px 26px 0;
+}
+
+.deHomeView .deHeroFrame {
+  position: relative;
+  width: min(460px, 100%);
+  border-radius: 32px 32px 0 0;
+  overflow: hidden;
+}
+
+.deHomeView .deHeroFrame::before {
+  content: "";
+  position: absolute;
+  inset: 18px 18px auto auto;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  filter: blur(0.5px);
+  z-index: 1;
+}
+
+.deHomeView .deHeroImage {
+  width: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.deHomeView .deSection {
+  display: grid;
+  gap: 20px;
+}
+
+.deHomeView .deSectionHeader {
+  display: grid;
+  gap: 10px;
+}
+
+.deHomeView .deSectionLabel {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--de-color-accent);
+}
+
+.deHomeView .deSectionTitle {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.deHomeView .deSectionText {
+  margin: 0;
+  color: var(--de-color-text-muted);
+}
+
+.deHomeView .deFeaturedGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.deHomeView .deFeaturedSection {
+  display: grid;
+  gap: 20px;
+  padding: 30px;
+  border: 1px solid var(--de-color-line);
+  border-radius: 28px;
+  background: var(--de-color-surface);
+  box-shadow: 0 10px 28px rgba(31, 42, 48, 0.04);
+}
+
+.deHomeView .deFeaturedCard {
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  border: 1px solid var(--de-color-line);
+  border-radius: 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfaf8 100%);
+  box-shadow: 0 10px 24px rgba(31, 42, 48, 0.05);
+}
+
+.deHomeView .deFeaturedMedia {
+  height: 280px;
+  background: var(--de-color-surface-secondary);
+}
+
+.deHomeView .deFeaturedImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.deHomeView .deFeaturedContent {
+  display: grid;
+  gap: 12px;
+  padding: 22px;
+}
+
+.deHomeView .deFeaturedTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: -0.03em;
+}
+
+.deHomeView .deFeaturedText {
+  margin: 0;
+  color: var(--de-color-text-muted);
+}
+
+.deHomeView .deFeaturedLink {
+  font-weight: 600;
+  color: var(--de-color-accent-dark);
+}
+
+.deHomeView .deContactPanel {
+  display: grid;
+  gap: 16px;
+  padding: 30px;
+  border: 1px solid var(--de-color-line);
+  border-radius: 28px;
+  background: var(--de-color-surface);
+  box-shadow: 0 10px 28px rgba(31, 42, 48, 0.04);
+}
+
+@media (max-width: 950px) {
+  .deHomeView .deHeroCopy {
+    padding: 42px 28px 34px;
+  }
+
+  .deHomeView .deHeroMedia {
+    padding: 24px 24px 0;
+  }
+}
+
+@media (max-width: 850px) {
+  .deHomeView .deHero {
+    grid-template-columns: 1fr;
+  }
+
+  .deHomeView .deHeroMedia {
+    justify-content: flex-end;
+  }
+
+  .deHomeView .deActions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .deHomeView .deButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .deHomeView .deFeaturedGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .deHomeView .deFeaturedSection {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .deHomeView .deFeaturedSection .deSectionHeader {
+    justify-items: center;
+    text-align: center;
+  }
+}

@@ -1,0 +1,31 @@
+.deMarkdownContent {
+  display: grid;
+  gap: 22px;
+}
+
+.deMarkdownContent .deBlock {
+  display: grid;
+  gap: 14px;
+}
+
+.deMarkdownContent .deHeadingTwo {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.deMarkdownContent .deParagraph {
+  margin: 0;
+  color: var(--de-color-text-muted);
+}
+
+.deMarkdownContent a {
+  font-weight: 700;
+}
+
+.deMarkdownContent .deList {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--de-color-text-muted);
+}

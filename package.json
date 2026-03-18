@@ -1,0 +1,31 @@
+{
+  "name": "plastic-surgery-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sanity/client": "7.11.0",
+    "@sanity/image-url": "1.2.0",
+    "groq": "4.6.1",
+    "next": "15.5.7",
+    "next-sanity": "10.0.16",
+    "react": "19.1.2",
+    "react-dom": "19.1.2",
+    "sanity": "4.6.1",
+    "zod": "4.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.1",
+    "@types/react": "19.1.12",
+    "@types/react-dom": "19.1.9",
+    "eslint": "9.26.0",
+    "eslint-config-next": "15.5.7",
+    "typescript": "5.8.3"
+  }
+}

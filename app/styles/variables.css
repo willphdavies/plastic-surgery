@@ -1,0 +1,17 @@
+:root {
+  --de-color-bg: #f5f2ee;
+  --de-color-surface: #ffffff;
+  --de-color-surface-secondary: #f8f7f5;
+  --de-color-text: #1f2a30;
+  --de-color-text-muted: #64727a;
+  --de-color-line: #dde3e6;
+  --de-color-accent: #718893;
+  --de-color-accent-dark: #24343d;
+  --de-color-warm: #d9cdc1;
+  --de-color-banner: #7f9199;
+  --de-shadow-lg: 0 18px 50px rgba(28, 42, 48, 0.08);
+  --de-radius-xl: 28px;
+  --de-radius-lg: 20px;
+  --de-radius-md: 14px;
+  --de-max-width: 1240px;
+}

@@ -1,0 +1,63 @@
+.deContactFormWidget {
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--de-color-surface);
+  border: 1px solid var(--de-color-line);
+  border-radius: var(--de-radius-xl);
+  padding: 28px;
+  box-shadow: 0 10px 28px rgba(31, 42, 48, 0.04);
+}
+
+.deContactFormWidget .deTitle {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+  letter-spacing: -0.03em;
+}
+
+.deContactFormWidget .deGrid {
+  display: grid;
+  gap: 14px;
+}
+
+.deContactFormWidget .deField {
+  display: grid;
+  gap: 8px;
+}
+
+.deContactFormWidget .deLabel {
+  font-size: 0.9rem;
+  color: var(--de-color-text-muted);
+}
+
+.deContactFormWidget .deInput,
+.deContactFormWidget .deTextarea {
+  width: 100%;
+  border: 1px solid var(--de-color-line);
+  border-radius: var(--de-radius-md);
+  padding: 14px 16px;
+  background: var(--de-color-surface-secondary);
+  color: var(--de-color-text);
+  font: inherit;
+}
+
+.deContactFormWidget .deTextarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.deContactFormWidget .deButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--de-color-accent-dark);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
