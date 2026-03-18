@@ -27,6 +27,13 @@ const socialLinks = [
 export function SiteShell({ children }: SiteShellProps) {
   return (
     <div className="deSiteShell">
+      <div className="deShellDemoBanner" role="note" aria-label="Demonstration website notice">
+        <p className="deShellDemoBannerText">
+          This is a demonstration website created to showcase design and
+          functionality.
+        </p>
+      </div>
+
       <div className="deShellBanner">
         <a className="deShellBannerLink" href="tel:5555555555">
           Call Today! 555-555-5555

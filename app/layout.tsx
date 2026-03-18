@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "Sarah Mitchell MD | Facial Plastic Surgery Portland",
   description:
     "Board-certified facial plastic surgery in Portland, Oregon",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({

@@ -30,7 +30,7 @@ const serviceCatalog: ServiceCatalogItem[] = [
     slug: "facelift",
     title: "Facelift",
     summary:
-      "Facelift surgery information, including treatment options, recovery, and consultation guidance. Facelift surgery information, including treatment options, recovery, and consultation guidance.",
+      "Facelift surgery information, including treatment options, recovery, and consultation guidance. Facelift surgery information.",
     image: "/services/facelift.png",
     featured: true,
   },
@@ -56,7 +56,7 @@ const serviceCatalog: ServiceCatalogItem[] = [
   {
     slug: "male-facial-plastic-surgery",
     title: "Plastic Surgery for Men",
-    summary: "Facial plastic surgery treatments and considerations for men. Try to keep this summary concise and engaging, highlighting the unique aspects of facial plastic",
+    summary: "Facial plastic surgery treatments and considerations for men.",
     image: "/services/man.png",
     featured: true,
   },
@@ -178,11 +178,11 @@ export const articles: Article[] = [
     heroImages: ["/doctor-white-coat.png"],
     content: `## Background
 
-Dr. Sarah Mitchell practices facial plastic and reconstructive surgery in Portland Oregon. After her undergraduate and medical education, she completed extended training focused on surgery and conditions of the face, head, and neck.
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 
 ## Medical education
 
-She earned her medical degree from the {unviverity} Medical Center. During that period, she developed a strong interest in reconstructive surgery and pursued research in the field, including a published project on facial nerve regeneration.
+It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 ## Residency and fellowship
 
@@ -190,12 +190,12 @@ She completed residency training in {training} at {univerity} in Portland. She t
 
 ## Academic and professional experience
 
-Dr. Mitchell has presented research at national meetings and published in peer-reviewed journals. She is an active member of the American Academy of Facial Plastic and Reconstructive Surgery and the American Society of Plastic Surgeons.
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters
 
 ## Practice
 
-Dr. Mitchell currently practices at {practice_location}, providing a range of surgical and non-surgical facial treatments. She is passionate about helping her patients look and feel their best, and she is committed to delivering the highest quality care in a compassionate and supportive environment.`,
-    relatedContent: [],
+Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.`,
+  relatedContent: [],
     widgets: ["contact-form"],
     seo: {
       title: "About Dr. Mitchell | Sarah Mitchell MD",
