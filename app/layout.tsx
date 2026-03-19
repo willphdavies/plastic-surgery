@@ -6,6 +6,17 @@ export const metadata: Metadata = {
   title: "Sarah Mitchell MD | Facial Plastic Surgery Portland",
   description:
     "Board-certified facial plastic surgery in Portland, Oregon",
+  openGraph: {
+    images: [
+      {
+        url: "https://plastic-surgery.digitalelevation.us/showcase.png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://plastic-surgery.digitalelevation.us/showcase.png"],
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" },
