@@ -3,9 +3,10 @@ import "./globals.css";
 import { SiteShell } from "@/components/layout/SiteShell";
 
 export const metadata: Metadata = {
-  title: "Sarah Mitchell MD | Facial Plastic Surgery Portland",
+  title:
+    "A concept home page for a Portland facial plastic surgery practice with refined visuals, procedure-focused messaging, and a premium aesthetic.",
   description:
-    "Board-certified facial plastic surgery in Portland, Oregon",
+    "A concept website for a Portland facial plastic surgery practice featuring elegant branding, surgical service highlights, and consultation-focused messaging.",
   openGraph: {
     images: [
       {
